@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Roboto';
+}
+h1,h2,h3,h4{
+    font-family: "Oooh Baby";
+}
+hr{
+    margin: 0;
+color: black;
+border: 0;
+opacity: 1;
+}
+@media (max-width: 800px) {
+    .hr {
+    display: none;
+}
+}

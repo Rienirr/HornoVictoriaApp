@@ -1,0 +1,139 @@
+.dropdown{
+    display: none;
+}
+.logeado{
+    display: inline-block;
+}
+.contenedor{
+    margin-bottom: 30px;
+}
+.carrito{
+   color: #ffca2c;
+   font-size: 2.5em;
+   align-self: center;
+   margin-right: 50px;
+   cursor: pointer;
+   
+}
+.badge{
+    font-size: .35em;
+    opacity: 0.6;
+}
+
+   
+      
+  
+
+h1{
+    cursor: pointer;
+    padding: 5px;
+text-align: center;
+font-family: "Oooh Baby";
+  border-radius: 5px;
+  font-size: 3rem;
+  font-weight: bold;
+  border: 3px solid burlywood;
+  background-color: #ffca2c8e;
+  color: rgb(116, 17, 17);
+  text-shadow: 2px 2px 2px black;
+margin-top: 5px;
+
+
+}
+img {
+    float: left;
+    margin: 5px auto;
+    cursor: pointer;
+}
+ul{
+    max-width: 33vw;
+    .spacer{
+        flex: 1 1 auto;
+    }
+    
+    li{
+        font-size: 1.2rem;
+        cursor: pointer;
+
+
+    }
+    
+    .list-group-item-warning{
+      
+        padding-top: 20px;
+        margin-left: 5px;
+        border: 1px solid gold;
+        margin-right: 15px;
+        max-width: 150px;
+        border-radius: 5px;
+        text-align: center;
+        justify-content: center; 
+        &:first-child{
+
+            padding-top: 10px;
+        }
+        &:first-child.list-group-item-action.active{
+            padding-top: 10px;
+        }
+        &.list-group-item-action.active{
+            background-color: burlywood;
+            max-width: 150px;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+        }
+      
+    }
+    
+}
+#login{
+    padding-top: 20px;
+}
+.float-right{
+    float: right;
+    .list-group-item-warning{
+        padding: 20px;
+        margin-left: 5px;
+        border: 1px solid gold;
+        margin-right: 15px;
+        max-width: 150px;
+        border-radius: 5px;
+        text-align: center;
+        justify-content: center; 
+    }
+}
+
+@media (max-width: 800px) {
+    .grande{
+        display: none;
+    }
+    img{
+        margin: 20px 35px 0px;
+    }
+    .dropdown{
+        margin-top: 3rem;
+        .carrito{
+           margin-right: 25px;
+        }
+        button{
+            i{
+                font-size: 1.5rem;
+            }
+        }
+        margin-left: 75%;
+        display: block;
+       ul{
+           background-color:#ffca2c;
+           li{
+               text-align: center;
+               text-shadow: 1px 1px white;
+           }
+       }
+    }
+
+}
+@media (max-width: 600px) {
+    .dropdown{
+        margin-left: 65%;
+}
+}

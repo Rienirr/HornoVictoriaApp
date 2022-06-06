@@ -1,0 +1,15 @@
+<app-nav></app-nav>
+
+<h2>Categorias de nuestros productos</h2>
+<div class="busqueda"> <input type="search" #inputstring (keyup.enter)="busqueda(inputstring.value)" name="buscar" class="buscar"> <button (click)="busqueda(inputstring.value)" class="btn btn-warning boton-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+<div class="categorias">
+<div routerLink="/productos/bobas" class="categoria"><img src="../../../assets/img/fotosMenu/BobaMenu.jpg" alt="BOBAS" class="imagen-categoria"><h3 class="nombre-categoria"> BOBAS Y MAGDALENAS</h3></div>
+<div routerLink="/productos/tortas" class="categoria"><img src="../../../assets/img/fotosMenu/TortasMenu.jpg" alt="TORTAS" class="imagen-categoria"><h3 class="nombre-categoria"> TORTAS/PIZZAS</h3></div>
+<div routerLink="/productos/hojaldre" class="categoria"><img src="../../../assets/img/fotosMenu/Hojaldre.jpg" alt="HOJALDRES" class="imagen-categoria"><h3 class="nombre-categoria"> HOJALDRES</h3></div>
+<div routerLink="/productos/pollos" class="categoria"><img src="../../../assets/img/fotosMenu/Rollos.jpg" alt="ROLLOS" class="imagen-categoria"><h3 class="nombre-categoria"> ROLLOS</h3></div>
+<div routerLink="/productos/pan" class="categoria"><img src="../../../assets/img/fotosMenu/PanMenu.jpg" alt="PAN" class="imagen-categoria"><h3 class="nombre-categoria"> PAN</h3></div>
+<div routerLink="/productos/refrescos" class="categoria"><img src="../../../assets/img/fotosMenu/refrescoMenu.jpg" alt="REFRESCOS" class="imagen-categoria"><h3 class="nombre-categoria"> REFRESCOS</h3></div>
+
+
+</div> 
+<app-footer></app-footer>

@@ -1,0 +1,26 @@
+
+<app-nav></app-nav>
+
+<h1>Productos en el carrito</h1>
+<div class="carrito">
+    <span>Nombre</span>
+        <span>Precio</span> 
+        <span>Cantidad</span>
+        <span> Total</span>
+        
+</div>
+<div  >
+    <div class="productos" *ngFor="let productCart of products; let i = index" >
+        <span>{{productCart.product.name}}, </span>
+        <span>{{productCart.product.price}} €</span>
+        <div class="cantidad"> <i (click)="addProduct(productCart.product,-1)" class="fa-solid fa-minus"></i> <span>{{productCart.quantity}}</span>  <i (click)="addProduct(productCart.product)" class="fa-solid fa-add"></i></div>
+       
+        <span>{{TotalPriceItem(productCart.quantity ,productCart.product.price)}} €  </span>
+        <img (click)="removeProduct(i,productCart.quantity)" src="../../../assets/img/borrar.png">
+    </div>
+</div>
+<div *ngIf="products.length> 0"> 
+    <span> Total a pagar</span>
+    <span> {{totalPrice}} €</span>
+</div>
+<app-footer></app-footer>

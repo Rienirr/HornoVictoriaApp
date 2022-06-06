@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+<ng-container *ngIf="params$ | async as params">
+
+
+<ng-container *ngIf="products$ | async as products">
+    <h1>Productos de la categoría: {{ params['termino'] | titlecase }}</h1>
+    <div class="cabecera"> 
+        <span>Imagen</span>
+        <span>Nombre</span>
+        <span> Alérgenos</span>
+        <span>Precio</span>
+        <span>Cantidad</span>
+    </div>
+    <div   *ngFor="let product of products; let i = index">
+        
+        <div class="producto" *ngIf="include(params['termino'],product.name)">
+         <img src="{{ product.image}} " />
+         <span>{{ product.name}} </span>
+         <img *ngIf="product.allergens==='Gluten'" src="../../../assets/img/alergenos/gluten.png" />
+         
+         <div><span>{{ product.price }}  </span>
+            <span> €  </span></div>
+            <div  > <input  class="text" id="producto{{i}}" type="number"  [disabled]="logged" min="0" required value="0">
+                <button type="button" class="btn btn-success" [disabled]="logged" (click)="anyadirAlCarrito(product, i)">Añadir</button>
+                </div>
+
+        </div>
+        </div>
+</ng-container>
+</ng-container>
+<app-footer></app-footer>

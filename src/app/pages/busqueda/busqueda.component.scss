@@ -1,0 +1,23 @@
+.cabecera{
+    display: flex;
+    justify-content: space-around;
+    font-family: "Oooh Baby";
+    font-size: 1.75rem;
+    text-shadow: 1px 1px 1px #ffca2c;;
+}
+.producto{
+    display: flex;
+    justify-content: space-around;  
+    padding: 1rem;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+h1{
+    margin: 2rem;
+    text-align: center;
+}
+.text{
+    appearance: textfield;
+}

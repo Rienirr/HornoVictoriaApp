@@ -1,0 +1,63 @@
+
+<div class="contenedor">
+  <h1 routerLink="/home" routerLinkActive="active"> Horno Victoria</h1>
+<img routerLink="/home" routerLinkActive="active" src="../../../assets/img/logo.jpg" width="150px">
+<div class="grande">
+<ul *ngIf="logeado;else nologeado" class="list-group list-group-horizontal float-right  ">
+    
+    <li (click)="LoginTrue()" routerLink="/login" 
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action list-group-item-warning  " id="login">login</li>
+
+    <li routerLink="/registrarse" 
+    routerLinkActive="active" class="list-group-item list-group-item-action list-group-item-warning">Registrarse</li>
+    
+</ul>
+<ng-template #nologeado>
+    <ul  class="list-group list-group-horizontal float-right" >
+      <i routerLink="/carrito" class="fa-solid fa-cart-shopping carrito position-relative"  > <span *ngIf="elementosCarrito > 0" class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark' > {{ elementosCarrito }} </span></i>
+     
+    <li (click)="LoginTrue()"  routerLink="/logout" 
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action list-group-item-warning ">logout</li>
+    
+</ul>
+</ng-template>
+
+
+<ul  class="list-group list-group-horizontal  ">
+ 
+    <li routerLink="/home" 
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action list-group-item-warning ">Nuestra historia</li>
+
+    <li routerLink="/categorias" 
+    routerLinkActive="active"
+    class="list-group-item list-group-item-action list-group-item-warning " >Producto</li>
+    
+    <li routerLink="/contacto" 
+    routerLinkActive="active" class="list-group-item list-group-item-action list-group-item-warning "> Contacto</li>
+</ul>
+</div>
+
+
+<div class="dropdown">
+  <div *ngIf="!logeado" class="logeado"><i routerLink="/carrito"  class="fa-solid fa-cart-shopping carrito position-relative"  > <span *ngIf="elementosCarrito > 0" class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark' > {{ elementosCarrito }} </span></i></div>
+    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <li routerLink="/categorias" 
+    routerLinkActive="active">Pruductos</li>
+    <hr>
+      <li routerLink="/login" 
+      routerLinkActive="active">login</li>
+      <hr>
+      <li routerLink="/contacto" 
+      routerLinkActive="active">Contacto</li>
+    </ul>
+  </div>
+
+
+</div>
+<hr class="hr">

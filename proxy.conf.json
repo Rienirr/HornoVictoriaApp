@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "target":"http://40258984.servicio-online.net",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

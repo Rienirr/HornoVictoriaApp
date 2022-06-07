@@ -9,7 +9,9 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductosComponent } from './productos/productos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductosComponent,
     CarritoComponent,
     BusquedaComponent,
+    LoginComponent,
+    RegistroComponent,
    
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

@@ -23,8 +23,7 @@ export class NavComponent implements AfterContentChecked {
  
   
 
-  public LoginTrue(){
-    this.loginService.set();
-    console.log("Cambio login");
-  }
+ logOut(){
+  this.loginService.set();
+ }
 }

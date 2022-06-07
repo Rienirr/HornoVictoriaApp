@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <ng-container *ngIf="params$ | async as params">
 
-
+ 
 <ng-container *ngIf="products$ | async as products">
     <h1>Productos de la categoría: {{ params['termino'] | titlecase }}</h1>
     <div class="cabecera"> 
@@ -11,7 +11,7 @@
         <span>Precio</span>
         <span>Cantidad</span>
     </div>
-    <div   *ngFor="let product of products; let i = index">
+   <div   *ngFor="let product of products; let i = index">
         
         <div class="producto" *ngIf="include(params['termino'],product.name)">
          <img src="{{ product.image}} " />
@@ -25,7 +25,7 @@
                 </div>
 
         </div>
-        </div>
+        </div> 
 </ng-container>
 </ng-container>
 <app-footer></app-footer>

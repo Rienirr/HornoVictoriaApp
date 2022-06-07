@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore} from "@angular/fire/compat/firestore";
 import { Params, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, map, Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart-service.service';
 import { DataBaseConnectionService } from 'src/app/services/data-base-connection.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -13,18 +14,21 @@ import { Product } from 'src/app/shared/interfaces/product.interface';
 })
 export class BusquedaComponent {
 
+
   public readonly params$: Observable<Params>;
- 
+ arrayproduct = Subscription;
  public logged : boolean
-  public readonly products$: Observable<Product[]>;
+  public  products$: Observable<Product[]>;
   constructor(
     private activatedRoute: ActivatedRoute,
     private loginService:LoginService,
     private cartSerivce: CartService,
+    private db: AngularFirestore,
     private dataBaseConnection: DataBaseConnectionService
   ) {
+    this.products$ =  this.dataBaseConnection.getAllProducts();
+  
  
-   this.products$ = this.dataBaseConnection.getAllProducts();
     this.logged = this.loginService.get();
     this.params$ = this.activatedRoute.params;
   }
@@ -43,4 +47,5 @@ cantidad.value="0";
    include(termino: string, producto: string): boolean{
    return producto.includes(termino);
    }
+   
 }

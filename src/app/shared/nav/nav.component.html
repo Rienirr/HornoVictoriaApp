@@ -5,7 +5,7 @@
 <div class="grande">
 <ul *ngIf="logeado;else nologeado" class="list-group list-group-horizontal float-right  ">
     
-    <li (click)="LoginTrue()" routerLink="/login" 
+    <li  routerLink="/login" 
     routerLinkActive="active"
     class="list-group-item list-group-item-action list-group-item-warning  " id="login">login</li>
 
@@ -17,7 +17,7 @@
     <ul  class="list-group list-group-horizontal float-right" >
       <i routerLink="/carrito" class="fa-solid fa-cart-shopping carrito position-relative"  > <span *ngIf="elementosCarrito > 0" class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark' > {{ elementosCarrito }} </span></i>
      
-    <li (click)="LoginTrue()"  routerLink="/logout" 
+    <li (click)="logOut()"  routerLink="/logout" 
     routerLinkActive="active"
     class="list-group-item list-group-item-action list-group-item-warning ">logout</li>
     

@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="card text-center">
+        <div class="card-header">
+            <b>Login</b>
+        </div>
+        <div class="card-body">  
+            <label> Email</label>
+            <input class="form-control m-1" type="email"   placeholder="ingrese su email"    [(ngModel)]="usuario.email"  >
+            <label> Contraseña</label>
+            <input  class="form-control m-1" type="password" placeholder="ingrese su password"   [(ngModel)]="usuario.password " >
+            <label> Nombre</label>
+            <input class="form-control m-1" type="text"   placeholder="ingrese su nombre"    [(ngModel)]="usuario.name"  >
+            <label> Apellidos </label>
+            <input class="form-control m-1" type="text"   placeholder="ingrese sus apellidos"    [(ngModel)]="usuario.surname"  >
+            <label> DNI </label>
+            <input class="form-control m-1" type="text"   placeholder="DNI"    [(ngModel)]="usuario.DNI"  >
+            <label> Teléfono </label>
+            <input class="form-control m-1 text" type="number"   placeholder="nº de telf"    [(ngModel)]="usuario.phone"  >
+            
+
+
+            <button class="btn btn-primary  " (click)="register()"> registrarse</button>
+       
+            <label routerLink="/login" class="register"> ¿Ya tienes cuenta? </label>
+        </div>
+    
+    </div>
+     <div class="error" *ngIf="errorLogin"> Introduce usuario y contraseña correctos.</div>
+    </div>

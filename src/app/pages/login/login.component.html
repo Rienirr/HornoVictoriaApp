@@ -1,0 +1,19 @@
+<div class="container">
+
+<div class="card text-center">
+    <div class="card-header">
+        <b>Login</b>
+    </div>
+    <div class="card-body">  
+        <label> Email</label>
+        <input class="form-control m-1" type="email"   placeholder="ingrese su email"    [(ngModel)]="usuario.email"  >
+        <label> Contraseña</label>
+        <input  class="form-control m-1" type="password" placeholder="ingrese su password"   [(ngModel)]="usuario.password " >
+        <button class="btn btn-primary  " (click)="logIn()"> Login</button>
+        <button class="btn btn-danger  " (click)="logInGoogle()"> Login con <i class="fa-brands fa-google"></i></button>
+        <label routerLink="/registrarse" class="register"> ¿Aún no tienes cuenta? Registrate ahora</label>
+    </div>
+
+</div>
+ <div class="error" *ngIf="errorLogin"> Introduce usuario y contraseña correctos.</div>
+</div>

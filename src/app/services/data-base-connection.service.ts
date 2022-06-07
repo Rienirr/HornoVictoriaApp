@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { Product } from '../shared/interfaces/product.interface';
-
+import { AngularFirestore} from "@angular/fire/compat/firestore";
 @Injectable({
   providedIn: 'root'
 })
 export class DataBaseConnectionService {
   public headers= new HttpHeaders()
  
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,
+    private db: AngularFirestore) { 
    
   }
-  getAllProducts(): Observable<Product[]>{
+  getAllProducts(){
+
     return  of([
       {
           "id": 1,
@@ -62,5 +64,6 @@ export class DataBaseConnectionService {
   /*   return this.http.get<Product[]>('https://hornovictoria.com/public/products'); */
 /*     return this.http.get<Product[]>('https://backendproyectovicen.herokuapp.com/public/products'); */
    
-  } 
-}
+  }
+} 
+
